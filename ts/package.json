@@ -1,0 +1,24 @@
+{
+    "name": "0x-bee-contracts",
+    "version": "1.0.0",
+    "description": "",
+    "main": "dist/index.js",
+    "scripts": {
+        "tsc": "tsc"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/0x-bee/contracts.git"
+    },
+    "author": "0x50fc@gmail.com",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/0x-bee/contracts/issues"
+    },
+    "homepage": "https://github.com/0x-bee/contracts#readme",
+    "devDependencies": {
+        "ethereum-abi-types-generator": "^1.3.2",
+        "typescript": "^4.7.4",
+        "web3": "^1.7.5"
+    }
+}

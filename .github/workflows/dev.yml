@@ -1,0 +1,28 @@
+name: dev
+
+on:
+  push:
+    branches: ["dev_v*"]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - run: |
+          npm i -g ethereum-abi-types-generator
+          ./ci/abi.sh
+          cd ts
+          sed -i "s/\"1.0.0\"/\"1.${ABI_BRANCH##dev_v}-${ABI_NUMBER}\"/" package.json
+          npm i
+          npm run tsc
+        env:
+          ABI_NUMBER: ${{ github.run_number }}
+          ABI_BRANCH: ${{ github.ref_name }}
+      - uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          package: ./ts/package.json

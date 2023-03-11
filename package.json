@@ -1,0 +1,22 @@
+{
+  "name": "0x-bee-contracts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0x-bee/contracts.git"
+  },
+  "author": "0x50fc@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/0x-bee/contracts/issues"
+  },
+  "homepage": "https://github.com/0x-bee/contracts#readme",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.7.3"
+  }
+}
