@@ -20,12 +20,9 @@ abstract contract ICurrency {
     function balanceOfETH() external view virtual returns (uint256);
 
     // ERC20 function
-    function payERC20(uint256 amount, string calldata orderId, address tokenAddress) external virtual;
-    function payERC20From(address from, uint256 amount, string calldata orderId, address tokenAddress) external virtual;
-
-    function withdrawERC20(uint256 amount, string calldata billId, address tokenAddress) external virtual;
-
-    function refundERC20(address to, uint256 amount, string calldata billId, address tokenAddress) external virtual;
-    function refundERC20From(address from, address to, uint256 amount, string calldata billId, address tokenAddress) external virtual;
-    function balanceOfERC20(address tokenAddress) external view virtual returns (uint256);
+    function payERC20(uint256 amount, string calldata orderId, bytes32 symbol) external virtual;
+    function withdrawERC20(uint256 amount, string calldata billId, bytes32 symbol) external virtual;
+    function refundERC20(address to, uint256 amount, string calldata billId, bytes32 symbol) external virtual;
+    function refundERC20ByContract(address to, uint256 amount, string calldata billId, bytes32 symbol) external virtual;
+    function balanceOfERC20(bytes32 symbol) external view virtual returns (uint256);
 }
