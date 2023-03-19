@@ -2,18 +2,14 @@
 
 pragma solidity ^0.8.0;
 
-import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
 import { ICurrencyReceiver } from "./interfaces/ICurrencyReceiver.sol";
+import { Administered } from "./Administered.sol";
 
-contract CurrencyReceiver is ICurrencyReceiver, Ownable {
+contract CurrencyReceiver is ICurrencyReceiver, Administered {
 
     using SafeERC20 for IERC20;
-
     mapping(address => uint256) internal _balanceOf;
-
-    constructor () {
-    }
 
     function pay(
         address currency,
@@ -32,11 +28,11 @@ contract CurrencyReceiver is ICurrencyReceiver, Ownable {
         address[] calldata currency,
         uint256[] calldata amount,
         string calldata billId
-    ) external override onlyOwner {
+    ) external override onlyMember {
         require(currency.length > 0,"currency fail");
         require(currency.length == amount.length,"currency or amount fail");
 
-        address to = owner();
+        address to = msg.sender;
 
         for(uint256 i=0;i<currency.length;i++) {
             require(amount[i] > 0, "amount fail");
@@ -53,7 +49,7 @@ contract CurrencyReceiver is ICurrencyReceiver, Ownable {
         uint256[] calldata amount,
         address[] calldata to,
         string[] calldata orderId
-    ) external override onlyOwner {
+    ) external override onlyMember {
 
         require(currency.length > 0,"currency fail");
         require(currency.length == amount.length,"amount fail");
