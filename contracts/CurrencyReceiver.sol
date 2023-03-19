@@ -10,8 +10,6 @@ contract CurrencyReceiver is ICurrencyReceiver, Ownable {
 
     using SafeERC20 for IERC20;
 
-    mapping(address => uint256) internal _balanceOf;
-
     constructor () {
     }
 
@@ -22,9 +20,7 @@ contract CurrencyReceiver is ICurrencyReceiver, Ownable {
     ) external override {
         require(currency != address(0),"currency fail");
         require(amount > 0 ,"amount fail");
-        require(_balanceOf[currency] + amount > _balanceOf[currency], "amount overflow");
         IERC20(currency).safeTransferFrom(msg.sender,address(this),amount);
-        _balanceOf[currency] = _balanceOf[currency] + amount;
         emit Pay(currency,msg.sender,amount,orderId);
     }
 
@@ -40,9 +36,7 @@ contract CurrencyReceiver is ICurrencyReceiver, Ownable {
 
         for(uint256 i=0;i<currency.length;i++) {
             require(amount[i] > 0, "amount fail");
-            require(amount[i] <= _balanceOf[currency[i]], "Insufficient balance");
             IERC20(currency[i]).safeTransfer(to,amount[i]);
-            _balanceOf[currency[i]] = _balanceOf[currency[i]] - amount[i];
         }
         
         emit Withdraw(currency,amount,to,billId);
@@ -62,9 +56,7 @@ contract CurrencyReceiver is ICurrencyReceiver, Ownable {
 
         for(uint256 i=0;i<currency.length;i++) {
             require(amount[i] > 0, "amount fail");
-            require(amount[i] <= _balanceOf[currency[i]], "Insufficient balance");
             IERC20(currency[i]).safeTransfer(to[i],amount[i]);
-            _balanceOf[currency[i]] = _balanceOf[currency[i]] - amount[i];
         }
         
         emit Refund(currency,amount,to,orderId);
@@ -73,6 +65,7 @@ contract CurrencyReceiver is ICurrencyReceiver, Ownable {
     function balanceOf(
         address currency
     ) external view override returns (uint256) {
-        return _balanceOf[currency];
+        require(currency != address(0),"currency fail");
+        return IERC20(currency).balanceOf(address(this));
     }
 }

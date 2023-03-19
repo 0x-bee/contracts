@@ -335,11 +335,11 @@
 			]
 		},
 		"contracts/CurrencyReceiver.sol": {
-			"keccak256": "0xee334397cecf1c45e3d00e197daf9c2b97988ea385f785ece6b446de0c709f9b",
+			"keccak256": "0x068187b143853979881ac2edb1a66d780b5df567935b1a6ddcf1f6ca3efafe66",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://196d2f259a9193a67484742fc7621a91b1acaaef033a884e824154b9164ffa34",
-				"dweb:/ipfs/QmRCxmCKgjruHYJDAWqityoJev7bAjEVmiG1vMyZsZhVQd"
+				"bzz-raw://3d4fbff0c93b9bff8b0afc82cc3164b35298a9ffacafdb854e39113fa829901c",
+				"dweb:/ipfs/QmbSx838GikmV7ux6Qe7iurxXchrgrXuitmewYPoTLP6yw"
 			]
 		},
 		"contracts/interfaces/ICurrencyReceiver.sol": {
