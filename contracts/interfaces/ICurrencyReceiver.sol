@@ -3,7 +3,7 @@ pragma solidity ^0.8.0;
 
 abstract contract ICurrencyReceiver {
     event Pay(
-        address currency,
+        address indexed currency,
         address indexed from,
         uint256 amount,
         string orderId
@@ -18,8 +18,8 @@ abstract contract ICurrencyReceiver {
 
     event Refund(
         address[] indexed currency,
-        address[] indexed to,
         uint256[] amount,
+        address[] indexed to,
         string[] orderIds
     );
 
@@ -38,7 +38,7 @@ abstract contract ICurrencyReceiver {
     function refund(
         address[] calldata currency,
         uint256[] calldata amount,
-        uint256[] calldata to,
+        address[] calldata to,
         string[] calldata orderId
     ) external virtual;
 
