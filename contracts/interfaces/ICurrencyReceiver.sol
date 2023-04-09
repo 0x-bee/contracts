@@ -10,17 +10,17 @@ abstract contract ICurrencyReceiver {
     );
 
     event Withdraw(
-        address[] indexed currency,
-        uint256[] amount,
+        address indexed currency,
+        uint256 amount,
         address indexed to,
         string billId
     );
 
     event Refund(
-        address[] indexed currency,
-        uint256[] amount,
-        address[] indexed to,
-        string[] orderIds
+        address indexed currency,
+        uint256 amount,
+        address indexed to,
+        string orderId
     );
 
     function pay(
@@ -32,7 +32,8 @@ abstract contract ICurrencyReceiver {
     function withdraw(
         address[] calldata currency,
         uint256[] calldata amount,
-        string calldata billId
+        address[] calldata to,
+        string[] calldata billId
     ) external virtual;
 
     function refund(

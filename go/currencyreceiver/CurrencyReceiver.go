@@ -30,7 +30,7 @@ var (
 
 // CurrencyreceiverMetaData contains all meta data concerning the Currencyreceiver contract.
 var CurrencyreceiverMetaData = &bind.MetaData{
-	ABI: "[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"currency\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"orderId\",\"type\":\"string\"}],\"name\":\"Pay\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address[]\",\"name\":\"currency\",\"type\":\"address[]\"},{\"indexed\":false,\"internalType\":\"uint256[]\",\"name\":\"amount\",\"type\":\"uint256[]\"},{\"indexed\":true,\"internalType\":\"address[]\",\"name\":\"to\",\"type\":\"address[]\"},{\"indexed\":false,\"internalType\":\"string[]\",\"name\":\"orderIds\",\"type\":\"string[]\"}],\"name\":\"Refund\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address[]\",\"name\":\"currency\",\"type\":\"address[]\"},{\"indexed\":false,\"internalType\":\"uint256[]\",\"name\":\"amount\",\"type\":\"uint256[]\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"billId\",\"type\":\"string\"}],\"name\":\"Withdraw\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"currency\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"currency\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"orderId\",\"type\":\"string\"}],\"name\":\"pay\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"currency\",\"type\":\"address[]\"},{\"internalType\":\"uint256[]\",\"name\":\"amount\",\"type\":\"uint256[]\"},{\"internalType\":\"address[]\",\"name\":\"to\",\"type\":\"address[]\"},{\"internalType\":\"string[]\",\"name\":\"orderId\",\"type\":\"string[]\"}],\"name\":\"refund\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"currency\",\"type\":\"address[]\"},{\"internalType\":\"uint256[]\",\"name\":\"amount\",\"type\":\"uint256[]\"},{\"internalType\":\"string\",\"name\":\"billId\",\"type\":\"string\"}],\"name\":\"withdraw\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}]",
+	ABI: "[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"currency\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"orderId\",\"type\":\"string\"}],\"name\":\"Pay\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"currency\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"orderId\",\"type\":\"string\"}],\"name\":\"Refund\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"previousAdminRole\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"newAdminRole\",\"type\":\"bytes32\"}],\"name\":\"RoleAdminChanged\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"}],\"name\":\"RoleGranted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"}],\"name\":\"RoleRevoked\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"currency\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"billId\",\"type\":\"string\"}],\"name\":\"Withdraw\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"DEFAULT_ADMIN_ROLE\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"REFUND_ROLE\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"WITHDRAW_ROLE\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"currency\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"}],\"name\":\"getRoleAdmin\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"grantRole\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"hasRole\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"currency\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"orderId\",\"type\":\"string\"}],\"name\":\"pay\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"currency\",\"type\":\"address[]\"},{\"internalType\":\"uint256[]\",\"name\":\"amount\",\"type\":\"uint256[]\"},{\"internalType\":\"address[]\",\"name\":\"to\",\"type\":\"address[]\"},{\"internalType\":\"string[]\",\"name\":\"orderId\",\"type\":\"string[]\"}],\"name\":\"refund\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"renounceRole\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"revokeRole\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes4\",\"name\":\"interfaceId\",\"type\":\"bytes4\"}],\"name\":\"supportsInterface\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"currency\",\"type\":\"address[]\"},{\"internalType\":\"uint256[]\",\"name\":\"amount\",\"type\":\"uint256[]\"},{\"internalType\":\"address[]\",\"name\":\"to\",\"type\":\"address[]\"},{\"internalType\":\"string[]\",\"name\":\"billId\",\"type\":\"string[]\"}],\"name\":\"withdraw\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}]",
 }
 
 // CurrencyreceiverABI is the input ABI used to generate the binding from.
@@ -179,6 +179,99 @@ func (_Currencyreceiver *CurrencyreceiverTransactorRaw) Transact(opts *bind.Tran
 	return _Currencyreceiver.Contract.contract.Transact(opts, method, params...)
 }
 
+// DEFAULTADMINROLE is a free data retrieval call binding the contract method 0xa217fddf.
+//
+// Solidity: function DEFAULT_ADMIN_ROLE() view returns(bytes32)
+func (_Currencyreceiver *CurrencyreceiverCaller) DEFAULTADMINROLE(opts *bind.CallOpts) ([32]byte, error) {
+	var out []interface{}
+	err := _Currencyreceiver.contract.Call(opts, &out, "DEFAULT_ADMIN_ROLE")
+
+	if err != nil {
+		return *new([32]byte), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new([32]byte)).(*[32]byte)
+
+	return out0, err
+
+}
+
+// DEFAULTADMINROLE is a free data retrieval call binding the contract method 0xa217fddf.
+//
+// Solidity: function DEFAULT_ADMIN_ROLE() view returns(bytes32)
+func (_Currencyreceiver *CurrencyreceiverSession) DEFAULTADMINROLE() ([32]byte, error) {
+	return _Currencyreceiver.Contract.DEFAULTADMINROLE(&_Currencyreceiver.CallOpts)
+}
+
+// DEFAULTADMINROLE is a free data retrieval call binding the contract method 0xa217fddf.
+//
+// Solidity: function DEFAULT_ADMIN_ROLE() view returns(bytes32)
+func (_Currencyreceiver *CurrencyreceiverCallerSession) DEFAULTADMINROLE() ([32]byte, error) {
+	return _Currencyreceiver.Contract.DEFAULTADMINROLE(&_Currencyreceiver.CallOpts)
+}
+
+// REFUNDROLE is a free data retrieval call binding the contract method 0x627c0906.
+//
+// Solidity: function REFUND_ROLE() view returns(bytes32)
+func (_Currencyreceiver *CurrencyreceiverCaller) REFUNDROLE(opts *bind.CallOpts) ([32]byte, error) {
+	var out []interface{}
+	err := _Currencyreceiver.contract.Call(opts, &out, "REFUND_ROLE")
+
+	if err != nil {
+		return *new([32]byte), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new([32]byte)).(*[32]byte)
+
+	return out0, err
+
+}
+
+// REFUNDROLE is a free data retrieval call binding the contract method 0x627c0906.
+//
+// Solidity: function REFUND_ROLE() view returns(bytes32)
+func (_Currencyreceiver *CurrencyreceiverSession) REFUNDROLE() ([32]byte, error) {
+	return _Currencyreceiver.Contract.REFUNDROLE(&_Currencyreceiver.CallOpts)
+}
+
+// REFUNDROLE is a free data retrieval call binding the contract method 0x627c0906.
+//
+// Solidity: function REFUND_ROLE() view returns(bytes32)
+func (_Currencyreceiver *CurrencyreceiverCallerSession) REFUNDROLE() ([32]byte, error) {
+	return _Currencyreceiver.Contract.REFUNDROLE(&_Currencyreceiver.CallOpts)
+}
+
+// WITHDRAWROLE is a free data retrieval call binding the contract method 0xe02023a1.
+//
+// Solidity: function WITHDRAW_ROLE() view returns(bytes32)
+func (_Currencyreceiver *CurrencyreceiverCaller) WITHDRAWROLE(opts *bind.CallOpts) ([32]byte, error) {
+	var out []interface{}
+	err := _Currencyreceiver.contract.Call(opts, &out, "WITHDRAW_ROLE")
+
+	if err != nil {
+		return *new([32]byte), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new([32]byte)).(*[32]byte)
+
+	return out0, err
+
+}
+
+// WITHDRAWROLE is a free data retrieval call binding the contract method 0xe02023a1.
+//
+// Solidity: function WITHDRAW_ROLE() view returns(bytes32)
+func (_Currencyreceiver *CurrencyreceiverSession) WITHDRAWROLE() ([32]byte, error) {
+	return _Currencyreceiver.Contract.WITHDRAWROLE(&_Currencyreceiver.CallOpts)
+}
+
+// WITHDRAWROLE is a free data retrieval call binding the contract method 0xe02023a1.
+//
+// Solidity: function WITHDRAW_ROLE() view returns(bytes32)
+func (_Currencyreceiver *CurrencyreceiverCallerSession) WITHDRAWROLE() ([32]byte, error) {
+	return _Currencyreceiver.Contract.WITHDRAWROLE(&_Currencyreceiver.CallOpts)
+}
+
 // BalanceOf is a free data retrieval call binding the contract method 0x70a08231.
 //
 // Solidity: function balanceOf(address currency) view returns(uint256)
@@ -210,35 +303,118 @@ func (_Currencyreceiver *CurrencyreceiverCallerSession) BalanceOf(currency commo
 	return _Currencyreceiver.Contract.BalanceOf(&_Currencyreceiver.CallOpts, currency)
 }
 
-// Owner is a free data retrieval call binding the contract method 0x8da5cb5b.
+// GetRoleAdmin is a free data retrieval call binding the contract method 0x248a9ca3.
 //
-// Solidity: function owner() view returns(address)
-func (_Currencyreceiver *CurrencyreceiverCaller) Owner(opts *bind.CallOpts) (common.Address, error) {
+// Solidity: function getRoleAdmin(bytes32 role) view returns(bytes32)
+func (_Currencyreceiver *CurrencyreceiverCaller) GetRoleAdmin(opts *bind.CallOpts, role [32]byte) ([32]byte, error) {
 	var out []interface{}
-	err := _Currencyreceiver.contract.Call(opts, &out, "owner")
+	err := _Currencyreceiver.contract.Call(opts, &out, "getRoleAdmin", role)
 
 	if err != nil {
-		return *new(common.Address), err
+		return *new([32]byte), err
 	}
 
-	out0 := *abi.ConvertType(out[0], new(common.Address)).(*common.Address)
+	out0 := *abi.ConvertType(out[0], new([32]byte)).(*[32]byte)
 
 	return out0, err
 
 }
 
-// Owner is a free data retrieval call binding the contract method 0x8da5cb5b.
+// GetRoleAdmin is a free data retrieval call binding the contract method 0x248a9ca3.
 //
-// Solidity: function owner() view returns(address)
-func (_Currencyreceiver *CurrencyreceiverSession) Owner() (common.Address, error) {
-	return _Currencyreceiver.Contract.Owner(&_Currencyreceiver.CallOpts)
+// Solidity: function getRoleAdmin(bytes32 role) view returns(bytes32)
+func (_Currencyreceiver *CurrencyreceiverSession) GetRoleAdmin(role [32]byte) ([32]byte, error) {
+	return _Currencyreceiver.Contract.GetRoleAdmin(&_Currencyreceiver.CallOpts, role)
 }
 
-// Owner is a free data retrieval call binding the contract method 0x8da5cb5b.
+// GetRoleAdmin is a free data retrieval call binding the contract method 0x248a9ca3.
 //
-// Solidity: function owner() view returns(address)
-func (_Currencyreceiver *CurrencyreceiverCallerSession) Owner() (common.Address, error) {
-	return _Currencyreceiver.Contract.Owner(&_Currencyreceiver.CallOpts)
+// Solidity: function getRoleAdmin(bytes32 role) view returns(bytes32)
+func (_Currencyreceiver *CurrencyreceiverCallerSession) GetRoleAdmin(role [32]byte) ([32]byte, error) {
+	return _Currencyreceiver.Contract.GetRoleAdmin(&_Currencyreceiver.CallOpts, role)
+}
+
+// HasRole is a free data retrieval call binding the contract method 0x91d14854.
+//
+// Solidity: function hasRole(bytes32 role, address account) view returns(bool)
+func (_Currencyreceiver *CurrencyreceiverCaller) HasRole(opts *bind.CallOpts, role [32]byte, account common.Address) (bool, error) {
+	var out []interface{}
+	err := _Currencyreceiver.contract.Call(opts, &out, "hasRole", role, account)
+
+	if err != nil {
+		return *new(bool), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(bool)).(*bool)
+
+	return out0, err
+
+}
+
+// HasRole is a free data retrieval call binding the contract method 0x91d14854.
+//
+// Solidity: function hasRole(bytes32 role, address account) view returns(bool)
+func (_Currencyreceiver *CurrencyreceiverSession) HasRole(role [32]byte, account common.Address) (bool, error) {
+	return _Currencyreceiver.Contract.HasRole(&_Currencyreceiver.CallOpts, role, account)
+}
+
+// HasRole is a free data retrieval call binding the contract method 0x91d14854.
+//
+// Solidity: function hasRole(bytes32 role, address account) view returns(bool)
+func (_Currencyreceiver *CurrencyreceiverCallerSession) HasRole(role [32]byte, account common.Address) (bool, error) {
+	return _Currencyreceiver.Contract.HasRole(&_Currencyreceiver.CallOpts, role, account)
+}
+
+// SupportsInterface is a free data retrieval call binding the contract method 0x01ffc9a7.
+//
+// Solidity: function supportsInterface(bytes4 interfaceId) view returns(bool)
+func (_Currencyreceiver *CurrencyreceiverCaller) SupportsInterface(opts *bind.CallOpts, interfaceId [4]byte) (bool, error) {
+	var out []interface{}
+	err := _Currencyreceiver.contract.Call(opts, &out, "supportsInterface", interfaceId)
+
+	if err != nil {
+		return *new(bool), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(bool)).(*bool)
+
+	return out0, err
+
+}
+
+// SupportsInterface is a free data retrieval call binding the contract method 0x01ffc9a7.
+//
+// Solidity: function supportsInterface(bytes4 interfaceId) view returns(bool)
+func (_Currencyreceiver *CurrencyreceiverSession) SupportsInterface(interfaceId [4]byte) (bool, error) {
+	return _Currencyreceiver.Contract.SupportsInterface(&_Currencyreceiver.CallOpts, interfaceId)
+}
+
+// SupportsInterface is a free data retrieval call binding the contract method 0x01ffc9a7.
+//
+// Solidity: function supportsInterface(bytes4 interfaceId) view returns(bool)
+func (_Currencyreceiver *CurrencyreceiverCallerSession) SupportsInterface(interfaceId [4]byte) (bool, error) {
+	return _Currencyreceiver.Contract.SupportsInterface(&_Currencyreceiver.CallOpts, interfaceId)
+}
+
+// GrantRole is a paid mutator transaction binding the contract method 0x2f2ff15d.
+//
+// Solidity: function grantRole(bytes32 role, address account) returns()
+func (_Currencyreceiver *CurrencyreceiverTransactor) GrantRole(opts *bind.TransactOpts, role [32]byte, account common.Address) (*types.Transaction, error) {
+	return _Currencyreceiver.contract.Transact(opts, "grantRole", role, account)
+}
+
+// GrantRole is a paid mutator transaction binding the contract method 0x2f2ff15d.
+//
+// Solidity: function grantRole(bytes32 role, address account) returns()
+func (_Currencyreceiver *CurrencyreceiverSession) GrantRole(role [32]byte, account common.Address) (*types.Transaction, error) {
+	return _Currencyreceiver.Contract.GrantRole(&_Currencyreceiver.TransactOpts, role, account)
+}
+
+// GrantRole is a paid mutator transaction binding the contract method 0x2f2ff15d.
+//
+// Solidity: function grantRole(bytes32 role, address account) returns()
+func (_Currencyreceiver *CurrencyreceiverTransactorSession) GrantRole(role [32]byte, account common.Address) (*types.Transaction, error) {
+	return _Currencyreceiver.Contract.GrantRole(&_Currencyreceiver.TransactOpts, role, account)
 }
 
 // Pay is a paid mutator transaction binding the contract method 0x4a4bdb30.
@@ -283,220 +459,67 @@ func (_Currencyreceiver *CurrencyreceiverTransactorSession) Refund(currency []co
 	return _Currencyreceiver.Contract.Refund(&_Currencyreceiver.TransactOpts, currency, amount, to, orderId)
 }
 
-// RenounceOwnership is a paid mutator transaction binding the contract method 0x715018a6.
+// RenounceRole is a paid mutator transaction binding the contract method 0x36568abe.
 //
-// Solidity: function renounceOwnership() returns()
-func (_Currencyreceiver *CurrencyreceiverTransactor) RenounceOwnership(opts *bind.TransactOpts) (*types.Transaction, error) {
-	return _Currencyreceiver.contract.Transact(opts, "renounceOwnership")
+// Solidity: function renounceRole(bytes32 role, address account) returns()
+func (_Currencyreceiver *CurrencyreceiverTransactor) RenounceRole(opts *bind.TransactOpts, role [32]byte, account common.Address) (*types.Transaction, error) {
+	return _Currencyreceiver.contract.Transact(opts, "renounceRole", role, account)
 }
 
-// RenounceOwnership is a paid mutator transaction binding the contract method 0x715018a6.
+// RenounceRole is a paid mutator transaction binding the contract method 0x36568abe.
 //
-// Solidity: function renounceOwnership() returns()
-func (_Currencyreceiver *CurrencyreceiverSession) RenounceOwnership() (*types.Transaction, error) {
-	return _Currencyreceiver.Contract.RenounceOwnership(&_Currencyreceiver.TransactOpts)
+// Solidity: function renounceRole(bytes32 role, address account) returns()
+func (_Currencyreceiver *CurrencyreceiverSession) RenounceRole(role [32]byte, account common.Address) (*types.Transaction, error) {
+	return _Currencyreceiver.Contract.RenounceRole(&_Currencyreceiver.TransactOpts, role, account)
 }
 
-// RenounceOwnership is a paid mutator transaction binding the contract method 0x715018a6.
+// RenounceRole is a paid mutator transaction binding the contract method 0x36568abe.
 //
-// Solidity: function renounceOwnership() returns()
-func (_Currencyreceiver *CurrencyreceiverTransactorSession) RenounceOwnership() (*types.Transaction, error) {
-	return _Currencyreceiver.Contract.RenounceOwnership(&_Currencyreceiver.TransactOpts)
+// Solidity: function renounceRole(bytes32 role, address account) returns()
+func (_Currencyreceiver *CurrencyreceiverTransactorSession) RenounceRole(role [32]byte, account common.Address) (*types.Transaction, error) {
+	return _Currencyreceiver.Contract.RenounceRole(&_Currencyreceiver.TransactOpts, role, account)
 }
 
-// TransferOwnership is a paid mutator transaction binding the contract method 0xf2fde38b.
+// RevokeRole is a paid mutator transaction binding the contract method 0xd547741f.
 //
-// Solidity: function transferOwnership(address newOwner) returns()
-func (_Currencyreceiver *CurrencyreceiverTransactor) TransferOwnership(opts *bind.TransactOpts, newOwner common.Address) (*types.Transaction, error) {
-	return _Currencyreceiver.contract.Transact(opts, "transferOwnership", newOwner)
+// Solidity: function revokeRole(bytes32 role, address account) returns()
+func (_Currencyreceiver *CurrencyreceiverTransactor) RevokeRole(opts *bind.TransactOpts, role [32]byte, account common.Address) (*types.Transaction, error) {
+	return _Currencyreceiver.contract.Transact(opts, "revokeRole", role, account)
 }
 
-// TransferOwnership is a paid mutator transaction binding the contract method 0xf2fde38b.
+// RevokeRole is a paid mutator transaction binding the contract method 0xd547741f.
 //
-// Solidity: function transferOwnership(address newOwner) returns()
-func (_Currencyreceiver *CurrencyreceiverSession) TransferOwnership(newOwner common.Address) (*types.Transaction, error) {
-	return _Currencyreceiver.Contract.TransferOwnership(&_Currencyreceiver.TransactOpts, newOwner)
+// Solidity: function revokeRole(bytes32 role, address account) returns()
+func (_Currencyreceiver *CurrencyreceiverSession) RevokeRole(role [32]byte, account common.Address) (*types.Transaction, error) {
+	return _Currencyreceiver.Contract.RevokeRole(&_Currencyreceiver.TransactOpts, role, account)
 }
 
-// TransferOwnership is a paid mutator transaction binding the contract method 0xf2fde38b.
+// RevokeRole is a paid mutator transaction binding the contract method 0xd547741f.
 //
-// Solidity: function transferOwnership(address newOwner) returns()
-func (_Currencyreceiver *CurrencyreceiverTransactorSession) TransferOwnership(newOwner common.Address) (*types.Transaction, error) {
-	return _Currencyreceiver.Contract.TransferOwnership(&_Currencyreceiver.TransactOpts, newOwner)
+// Solidity: function revokeRole(bytes32 role, address account) returns()
+func (_Currencyreceiver *CurrencyreceiverTransactorSession) RevokeRole(role [32]byte, account common.Address) (*types.Transaction, error) {
+	return _Currencyreceiver.Contract.RevokeRole(&_Currencyreceiver.TransactOpts, role, account)
 }
 
-// Withdraw is a paid mutator transaction binding the contract method 0x17e78b6c.
+// Withdraw is a paid mutator transaction binding the contract method 0xea4e6c5c.
 //
-// Solidity: function withdraw(address[] currency, uint256[] amount, string billId) returns()
-func (_Currencyreceiver *CurrencyreceiverTransactor) Withdraw(opts *bind.TransactOpts, currency []common.Address, amount []*big.Int, billId string) (*types.Transaction, error) {
-	return _Currencyreceiver.contract.Transact(opts, "withdraw", currency, amount, billId)
+// Solidity: function withdraw(address[] currency, uint256[] amount, address[] to, string[] billId) returns()
+func (_Currencyreceiver *CurrencyreceiverTransactor) Withdraw(opts *bind.TransactOpts, currency []common.Address, amount []*big.Int, to []common.Address, billId []string) (*types.Transaction, error) {
+	return _Currencyreceiver.contract.Transact(opts, "withdraw", currency, amount, to, billId)
 }
 
-// Withdraw is a paid mutator transaction binding the contract method 0x17e78b6c.
+// Withdraw is a paid mutator transaction binding the contract method 0xea4e6c5c.
 //
-// Solidity: function withdraw(address[] currency, uint256[] amount, string billId) returns()
-func (_Currencyreceiver *CurrencyreceiverSession) Withdraw(currency []common.Address, amount []*big.Int, billId string) (*types.Transaction, error) {
-	return _Currencyreceiver.Contract.Withdraw(&_Currencyreceiver.TransactOpts, currency, amount, billId)
+// Solidity: function withdraw(address[] currency, uint256[] amount, address[] to, string[] billId) returns()
+func (_Currencyreceiver *CurrencyreceiverSession) Withdraw(currency []common.Address, amount []*big.Int, to []common.Address, billId []string) (*types.Transaction, error) {
+	return _Currencyreceiver.Contract.Withdraw(&_Currencyreceiver.TransactOpts, currency, amount, to, billId)
 }
 
-// Withdraw is a paid mutator transaction binding the contract method 0x17e78b6c.
+// Withdraw is a paid mutator transaction binding the contract method 0xea4e6c5c.
 //
-// Solidity: function withdraw(address[] currency, uint256[] amount, string billId) returns()
-func (_Currencyreceiver *CurrencyreceiverTransactorSession) Withdraw(currency []common.Address, amount []*big.Int, billId string) (*types.Transaction, error) {
-	return _Currencyreceiver.Contract.Withdraw(&_Currencyreceiver.TransactOpts, currency, amount, billId)
-}
-
-// CurrencyreceiverOwnershipTransferredIterator is returned from FilterOwnershipTransferred and is used to iterate over the raw logs and unpacked data for OwnershipTransferred events raised by the Currencyreceiver contract.
-type CurrencyreceiverOwnershipTransferredIterator struct {
-	Event *CurrencyreceiverOwnershipTransferred // Event containing the contract specifics and raw log
-
-	contract *bind.BoundContract // Generic contract to use for unpacking event data
-	event    string              // Event name to use for unpacking event data
-
-	logs chan types.Log        // Log channel receiving the found contract events
-	sub  ethereum.Subscription // Subscription for errors, completion and termination
-	done bool                  // Whether the subscription completed delivering logs
-	fail error                 // Occurred error to stop iteration
-}
-
-// Next advances the iterator to the subsequent event, returning whether there
-// are any more events found. In case of a retrieval or parsing error, false is
-// returned and Error() can be queried for the exact failure.
-func (it *CurrencyreceiverOwnershipTransferredIterator) Next() bool {
-	// If the iterator failed, stop iterating
-	if it.fail != nil {
-		return false
-	}
-	// If the iterator completed, deliver directly whatever's available
-	if it.done {
-		select {
-		case log := <-it.logs:
-			it.Event = new(CurrencyreceiverOwnershipTransferred)
-			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
-				it.fail = err
-				return false
-			}
-			it.Event.Raw = log
-			return true
-
-		default:
-			return false
-		}
-	}
-	// Iterator still in progress, wait for either a data or an error event
-	select {
-	case log := <-it.logs:
-		it.Event = new(CurrencyreceiverOwnershipTransferred)
-		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
-			it.fail = err
-			return false
-		}
-		it.Event.Raw = log
-		return true
-
-	case err := <-it.sub.Err():
-		it.done = true
-		it.fail = err
-		return it.Next()
-	}
-}
-
-// Error returns any retrieval or parsing error occurred during filtering.
-func (it *CurrencyreceiverOwnershipTransferredIterator) Error() error {
-	return it.fail
-}
-
-// Close terminates the iteration process, releasing any pending underlying
-// resources.
-func (it *CurrencyreceiverOwnershipTransferredIterator) Close() error {
-	it.sub.Unsubscribe()
-	return nil
-}
-
-// CurrencyreceiverOwnershipTransferred represents a OwnershipTransferred event raised by the Currencyreceiver contract.
-type CurrencyreceiverOwnershipTransferred struct {
-	PreviousOwner common.Address
-	NewOwner      common.Address
-	Raw           types.Log // Blockchain specific contextual infos
-}
-
-// FilterOwnershipTransferred is a free log retrieval operation binding the contract event 0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0.
-//
-// Solidity: event OwnershipTransferred(address indexed previousOwner, address indexed newOwner)
-func (_Currencyreceiver *CurrencyreceiverFilterer) FilterOwnershipTransferred(opts *bind.FilterOpts, previousOwner []common.Address, newOwner []common.Address) (*CurrencyreceiverOwnershipTransferredIterator, error) {
-
-	var previousOwnerRule []interface{}
-	for _, previousOwnerItem := range previousOwner {
-		previousOwnerRule = append(previousOwnerRule, previousOwnerItem)
-	}
-	var newOwnerRule []interface{}
-	for _, newOwnerItem := range newOwner {
-		newOwnerRule = append(newOwnerRule, newOwnerItem)
-	}
-
-	logs, sub, err := _Currencyreceiver.contract.FilterLogs(opts, "OwnershipTransferred", previousOwnerRule, newOwnerRule)
-	if err != nil {
-		return nil, err
-	}
-	return &CurrencyreceiverOwnershipTransferredIterator{contract: _Currencyreceiver.contract, event: "OwnershipTransferred", logs: logs, sub: sub}, nil
-}
-
-// WatchOwnershipTransferred is a free log subscription operation binding the contract event 0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0.
-//
-// Solidity: event OwnershipTransferred(address indexed previousOwner, address indexed newOwner)
-func (_Currencyreceiver *CurrencyreceiverFilterer) WatchOwnershipTransferred(opts *bind.WatchOpts, sink chan<- *CurrencyreceiverOwnershipTransferred, previousOwner []common.Address, newOwner []common.Address) (event.Subscription, error) {
-
-	var previousOwnerRule []interface{}
-	for _, previousOwnerItem := range previousOwner {
-		previousOwnerRule = append(previousOwnerRule, previousOwnerItem)
-	}
-	var newOwnerRule []interface{}
-	for _, newOwnerItem := range newOwner {
-		newOwnerRule = append(newOwnerRule, newOwnerItem)
-	}
-
-	logs, sub, err := _Currencyreceiver.contract.WatchLogs(opts, "OwnershipTransferred", previousOwnerRule, newOwnerRule)
-	if err != nil {
-		return nil, err
-	}
-	return event.NewSubscription(func(quit <-chan struct{}) error {
-		defer sub.Unsubscribe()
-		for {
-			select {
-			case log := <-logs:
-				// New log arrived, parse the event and forward to the user
-				event := new(CurrencyreceiverOwnershipTransferred)
-				if err := _Currencyreceiver.contract.UnpackLog(event, "OwnershipTransferred", log); err != nil {
-					return err
-				}
-				event.Raw = log
-
-				select {
-				case sink <- event:
-				case err := <-sub.Err():
-					return err
-				case <-quit:
-					return nil
-				}
-			case err := <-sub.Err():
-				return err
-			case <-quit:
-				return nil
-			}
-		}
-	}), nil
-}
-
-// ParseOwnershipTransferred is a log parse operation binding the contract event 0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0.
-//
-// Solidity: event OwnershipTransferred(address indexed previousOwner, address indexed newOwner)
-func (_Currencyreceiver *CurrencyreceiverFilterer) ParseOwnershipTransferred(log types.Log) (*CurrencyreceiverOwnershipTransferred, error) {
-	event := new(CurrencyreceiverOwnershipTransferred)
-	if err := _Currencyreceiver.contract.UnpackLog(event, "OwnershipTransferred", log); err != nil {
-		return nil, err
-	}
-	event.Raw = log
-	return event, nil
+// Solidity: function withdraw(address[] currency, uint256[] amount, address[] to, string[] billId) returns()
+func (_Currencyreceiver *CurrencyreceiverTransactorSession) Withdraw(currency []common.Address, amount []*big.Int, to []common.Address, billId []string) (*types.Transaction, error) {
+	return _Currencyreceiver.Contract.Withdraw(&_Currencyreceiver.TransactOpts, currency, amount, to, billId)
 }
 
 // CurrencyreceiverPayIterator is returned from FilterPay and is used to iterate over the raw logs and unpacked data for Pay events raised by the Currencyreceiver contract.
@@ -723,17 +746,17 @@ func (it *CurrencyreceiverRefundIterator) Close() error {
 
 // CurrencyreceiverRefund represents a Refund event raised by the Currencyreceiver contract.
 type CurrencyreceiverRefund struct {
-	Currency []common.Address
-	Amount   []*big.Int
-	To       []common.Address
-	OrderIds []string
+	Currency common.Address
+	Amount   *big.Int
+	To       common.Address
+	OrderId  string
 	Raw      types.Log // Blockchain specific contextual infos
 }
 
-// FilterRefund is a free log retrieval operation binding the contract event 0xa00a8aecfc1929afaf83d428e7b217b6626396c9dd39ad9f5d7327a0bb5e4d13.
+// FilterRefund is a free log retrieval operation binding the contract event 0x1a50ff908577c6023d20715c654df4d0ac65bbb4ee6422490751a0489f85dc67.
 //
-// Solidity: event Refund(address[] indexed currency, uint256[] amount, address[] indexed to, string[] orderIds)
-func (_Currencyreceiver *CurrencyreceiverFilterer) FilterRefund(opts *bind.FilterOpts, currency [][]common.Address, to [][]common.Address) (*CurrencyreceiverRefundIterator, error) {
+// Solidity: event Refund(address indexed currency, uint256 amount, address indexed to, string orderId)
+func (_Currencyreceiver *CurrencyreceiverFilterer) FilterRefund(opts *bind.FilterOpts, currency []common.Address, to []common.Address) (*CurrencyreceiverRefundIterator, error) {
 
 	var currencyRule []interface{}
 	for _, currencyItem := range currency {
@@ -752,10 +775,10 @@ func (_Currencyreceiver *CurrencyreceiverFilterer) FilterRefund(opts *bind.Filte
 	return &CurrencyreceiverRefundIterator{contract: _Currencyreceiver.contract, event: "Refund", logs: logs, sub: sub}, nil
 }
 
-// WatchRefund is a free log subscription operation binding the contract event 0xa00a8aecfc1929afaf83d428e7b217b6626396c9dd39ad9f5d7327a0bb5e4d13.
+// WatchRefund is a free log subscription operation binding the contract event 0x1a50ff908577c6023d20715c654df4d0ac65bbb4ee6422490751a0489f85dc67.
 //
-// Solidity: event Refund(address[] indexed currency, uint256[] amount, address[] indexed to, string[] orderIds)
-func (_Currencyreceiver *CurrencyreceiverFilterer) WatchRefund(opts *bind.WatchOpts, sink chan<- *CurrencyreceiverRefund, currency [][]common.Address, to [][]common.Address) (event.Subscription, error) {
+// Solidity: event Refund(address indexed currency, uint256 amount, address indexed to, string orderId)
+func (_Currencyreceiver *CurrencyreceiverFilterer) WatchRefund(opts *bind.WatchOpts, sink chan<- *CurrencyreceiverRefund, currency []common.Address, to []common.Address) (event.Subscription, error) {
 
 	var currencyRule []interface{}
 	for _, currencyItem := range currency {
@@ -799,12 +822,498 @@ func (_Currencyreceiver *CurrencyreceiverFilterer) WatchRefund(opts *bind.WatchO
 	}), nil
 }
 
-// ParseRefund is a log parse operation binding the contract event 0xa00a8aecfc1929afaf83d428e7b217b6626396c9dd39ad9f5d7327a0bb5e4d13.
+// ParseRefund is a log parse operation binding the contract event 0x1a50ff908577c6023d20715c654df4d0ac65bbb4ee6422490751a0489f85dc67.
 //
-// Solidity: event Refund(address[] indexed currency, uint256[] amount, address[] indexed to, string[] orderIds)
+// Solidity: event Refund(address indexed currency, uint256 amount, address indexed to, string orderId)
 func (_Currencyreceiver *CurrencyreceiverFilterer) ParseRefund(log types.Log) (*CurrencyreceiverRefund, error) {
 	event := new(CurrencyreceiverRefund)
 	if err := _Currencyreceiver.contract.UnpackLog(event, "Refund", log); err != nil {
+		return nil, err
+	}
+	event.Raw = log
+	return event, nil
+}
+
+// CurrencyreceiverRoleAdminChangedIterator is returned from FilterRoleAdminChanged and is used to iterate over the raw logs and unpacked data for RoleAdminChanged events raised by the Currencyreceiver contract.
+type CurrencyreceiverRoleAdminChangedIterator struct {
+	Event *CurrencyreceiverRoleAdminChanged // Event containing the contract specifics and raw log
+
+	contract *bind.BoundContract // Generic contract to use for unpacking event data
+	event    string              // Event name to use for unpacking event data
+
+	logs chan types.Log        // Log channel receiving the found contract events
+	sub  ethereum.Subscription // Subscription for errors, completion and termination
+	done bool                  // Whether the subscription completed delivering logs
+	fail error                 // Occurred error to stop iteration
+}
+
+// Next advances the iterator to the subsequent event, returning whether there
+// are any more events found. In case of a retrieval or parsing error, false is
+// returned and Error() can be queried for the exact failure.
+func (it *CurrencyreceiverRoleAdminChangedIterator) Next() bool {
+	// If the iterator failed, stop iterating
+	if it.fail != nil {
+		return false
+	}
+	// If the iterator completed, deliver directly whatever's available
+	if it.done {
+		select {
+		case log := <-it.logs:
+			it.Event = new(CurrencyreceiverRoleAdminChanged)
+			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+				it.fail = err
+				return false
+			}
+			it.Event.Raw = log
+			return true
+
+		default:
+			return false
+		}
+	}
+	// Iterator still in progress, wait for either a data or an error event
+	select {
+	case log := <-it.logs:
+		it.Event = new(CurrencyreceiverRoleAdminChanged)
+		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+			it.fail = err
+			return false
+		}
+		it.Event.Raw = log
+		return true
+
+	case err := <-it.sub.Err():
+		it.done = true
+		it.fail = err
+		return it.Next()
+	}
+}
+
+// Error returns any retrieval or parsing error occurred during filtering.
+func (it *CurrencyreceiverRoleAdminChangedIterator) Error() error {
+	return it.fail
+}
+
+// Close terminates the iteration process, releasing any pending underlying
+// resources.
+func (it *CurrencyreceiverRoleAdminChangedIterator) Close() error {
+	it.sub.Unsubscribe()
+	return nil
+}
+
+// CurrencyreceiverRoleAdminChanged represents a RoleAdminChanged event raised by the Currencyreceiver contract.
+type CurrencyreceiverRoleAdminChanged struct {
+	Role              [32]byte
+	PreviousAdminRole [32]byte
+	NewAdminRole      [32]byte
+	Raw               types.Log // Blockchain specific contextual infos
+}
+
+// FilterRoleAdminChanged is a free log retrieval operation binding the contract event 0xbd79b86ffe0ab8e8776151514217cd7cacd52c909f66475c3af44e129f0b00ff.
+//
+// Solidity: event RoleAdminChanged(bytes32 indexed role, bytes32 indexed previousAdminRole, bytes32 indexed newAdminRole)
+func (_Currencyreceiver *CurrencyreceiverFilterer) FilterRoleAdminChanged(opts *bind.FilterOpts, role [][32]byte, previousAdminRole [][32]byte, newAdminRole [][32]byte) (*CurrencyreceiverRoleAdminChangedIterator, error) {
+
+	var roleRule []interface{}
+	for _, roleItem := range role {
+		roleRule = append(roleRule, roleItem)
+	}
+	var previousAdminRoleRule []interface{}
+	for _, previousAdminRoleItem := range previousAdminRole {
+		previousAdminRoleRule = append(previousAdminRoleRule, previousAdminRoleItem)
+	}
+	var newAdminRoleRule []interface{}
+	for _, newAdminRoleItem := range newAdminRole {
+		newAdminRoleRule = append(newAdminRoleRule, newAdminRoleItem)
+	}
+
+	logs, sub, err := _Currencyreceiver.contract.FilterLogs(opts, "RoleAdminChanged", roleRule, previousAdminRoleRule, newAdminRoleRule)
+	if err != nil {
+		return nil, err
+	}
+	return &CurrencyreceiverRoleAdminChangedIterator{contract: _Currencyreceiver.contract, event: "RoleAdminChanged", logs: logs, sub: sub}, nil
+}
+
+// WatchRoleAdminChanged is a free log subscription operation binding the contract event 0xbd79b86ffe0ab8e8776151514217cd7cacd52c909f66475c3af44e129f0b00ff.
+//
+// Solidity: event RoleAdminChanged(bytes32 indexed role, bytes32 indexed previousAdminRole, bytes32 indexed newAdminRole)
+func (_Currencyreceiver *CurrencyreceiverFilterer) WatchRoleAdminChanged(opts *bind.WatchOpts, sink chan<- *CurrencyreceiverRoleAdminChanged, role [][32]byte, previousAdminRole [][32]byte, newAdminRole [][32]byte) (event.Subscription, error) {
+
+	var roleRule []interface{}
+	for _, roleItem := range role {
+		roleRule = append(roleRule, roleItem)
+	}
+	var previousAdminRoleRule []interface{}
+	for _, previousAdminRoleItem := range previousAdminRole {
+		previousAdminRoleRule = append(previousAdminRoleRule, previousAdminRoleItem)
+	}
+	var newAdminRoleRule []interface{}
+	for _, newAdminRoleItem := range newAdminRole {
+		newAdminRoleRule = append(newAdminRoleRule, newAdminRoleItem)
+	}
+
+	logs, sub, err := _Currencyreceiver.contract.WatchLogs(opts, "RoleAdminChanged", roleRule, previousAdminRoleRule, newAdminRoleRule)
+	if err != nil {
+		return nil, err
+	}
+	return event.NewSubscription(func(quit <-chan struct{}) error {
+		defer sub.Unsubscribe()
+		for {
+			select {
+			case log := <-logs:
+				// New log arrived, parse the event and forward to the user
+				event := new(CurrencyreceiverRoleAdminChanged)
+				if err := _Currencyreceiver.contract.UnpackLog(event, "RoleAdminChanged", log); err != nil {
+					return err
+				}
+				event.Raw = log
+
+				select {
+				case sink <- event:
+				case err := <-sub.Err():
+					return err
+				case <-quit:
+					return nil
+				}
+			case err := <-sub.Err():
+				return err
+			case <-quit:
+				return nil
+			}
+		}
+	}), nil
+}
+
+// ParseRoleAdminChanged is a log parse operation binding the contract event 0xbd79b86ffe0ab8e8776151514217cd7cacd52c909f66475c3af44e129f0b00ff.
+//
+// Solidity: event RoleAdminChanged(bytes32 indexed role, bytes32 indexed previousAdminRole, bytes32 indexed newAdminRole)
+func (_Currencyreceiver *CurrencyreceiverFilterer) ParseRoleAdminChanged(log types.Log) (*CurrencyreceiverRoleAdminChanged, error) {
+	event := new(CurrencyreceiverRoleAdminChanged)
+	if err := _Currencyreceiver.contract.UnpackLog(event, "RoleAdminChanged", log); err != nil {
+		return nil, err
+	}
+	event.Raw = log
+	return event, nil
+}
+
+// CurrencyreceiverRoleGrantedIterator is returned from FilterRoleGranted and is used to iterate over the raw logs and unpacked data for RoleGranted events raised by the Currencyreceiver contract.
+type CurrencyreceiverRoleGrantedIterator struct {
+	Event *CurrencyreceiverRoleGranted // Event containing the contract specifics and raw log
+
+	contract *bind.BoundContract // Generic contract to use for unpacking event data
+	event    string              // Event name to use for unpacking event data
+
+	logs chan types.Log        // Log channel receiving the found contract events
+	sub  ethereum.Subscription // Subscription for errors, completion and termination
+	done bool                  // Whether the subscription completed delivering logs
+	fail error                 // Occurred error to stop iteration
+}
+
+// Next advances the iterator to the subsequent event, returning whether there
+// are any more events found. In case of a retrieval or parsing error, false is
+// returned and Error() can be queried for the exact failure.
+func (it *CurrencyreceiverRoleGrantedIterator) Next() bool {
+	// If the iterator failed, stop iterating
+	if it.fail != nil {
+		return false
+	}
+	// If the iterator completed, deliver directly whatever's available
+	if it.done {
+		select {
+		case log := <-it.logs:
+			it.Event = new(CurrencyreceiverRoleGranted)
+			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+				it.fail = err
+				return false
+			}
+			it.Event.Raw = log
+			return true
+
+		default:
+			return false
+		}
+	}
+	// Iterator still in progress, wait for either a data or an error event
+	select {
+	case log := <-it.logs:
+		it.Event = new(CurrencyreceiverRoleGranted)
+		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+			it.fail = err
+			return false
+		}
+		it.Event.Raw = log
+		return true
+
+	case err := <-it.sub.Err():
+		it.done = true
+		it.fail = err
+		return it.Next()
+	}
+}
+
+// Error returns any retrieval or parsing error occurred during filtering.
+func (it *CurrencyreceiverRoleGrantedIterator) Error() error {
+	return it.fail
+}
+
+// Close terminates the iteration process, releasing any pending underlying
+// resources.
+func (it *CurrencyreceiverRoleGrantedIterator) Close() error {
+	it.sub.Unsubscribe()
+	return nil
+}
+
+// CurrencyreceiverRoleGranted represents a RoleGranted event raised by the Currencyreceiver contract.
+type CurrencyreceiverRoleGranted struct {
+	Role    [32]byte
+	Account common.Address
+	Sender  common.Address
+	Raw     types.Log // Blockchain specific contextual infos
+}
+
+// FilterRoleGranted is a free log retrieval operation binding the contract event 0x2f8788117e7eff1d82e926ec794901d17c78024a50270940304540a733656f0d.
+//
+// Solidity: event RoleGranted(bytes32 indexed role, address indexed account, address indexed sender)
+func (_Currencyreceiver *CurrencyreceiverFilterer) FilterRoleGranted(opts *bind.FilterOpts, role [][32]byte, account []common.Address, sender []common.Address) (*CurrencyreceiverRoleGrantedIterator, error) {
+
+	var roleRule []interface{}
+	for _, roleItem := range role {
+		roleRule = append(roleRule, roleItem)
+	}
+	var accountRule []interface{}
+	for _, accountItem := range account {
+		accountRule = append(accountRule, accountItem)
+	}
+	var senderRule []interface{}
+	for _, senderItem := range sender {
+		senderRule = append(senderRule, senderItem)
+	}
+
+	logs, sub, err := _Currencyreceiver.contract.FilterLogs(opts, "RoleGranted", roleRule, accountRule, senderRule)
+	if err != nil {
+		return nil, err
+	}
+	return &CurrencyreceiverRoleGrantedIterator{contract: _Currencyreceiver.contract, event: "RoleGranted", logs: logs, sub: sub}, nil
+}
+
+// WatchRoleGranted is a free log subscription operation binding the contract event 0x2f8788117e7eff1d82e926ec794901d17c78024a50270940304540a733656f0d.
+//
+// Solidity: event RoleGranted(bytes32 indexed role, address indexed account, address indexed sender)
+func (_Currencyreceiver *CurrencyreceiverFilterer) WatchRoleGranted(opts *bind.WatchOpts, sink chan<- *CurrencyreceiverRoleGranted, role [][32]byte, account []common.Address, sender []common.Address) (event.Subscription, error) {
+
+	var roleRule []interface{}
+	for _, roleItem := range role {
+		roleRule = append(roleRule, roleItem)
+	}
+	var accountRule []interface{}
+	for _, accountItem := range account {
+		accountRule = append(accountRule, accountItem)
+	}
+	var senderRule []interface{}
+	for _, senderItem := range sender {
+		senderRule = append(senderRule, senderItem)
+	}
+
+	logs, sub, err := _Currencyreceiver.contract.WatchLogs(opts, "RoleGranted", roleRule, accountRule, senderRule)
+	if err != nil {
+		return nil, err
+	}
+	return event.NewSubscription(func(quit <-chan struct{}) error {
+		defer sub.Unsubscribe()
+		for {
+			select {
+			case log := <-logs:
+				// New log arrived, parse the event and forward to the user
+				event := new(CurrencyreceiverRoleGranted)
+				if err := _Currencyreceiver.contract.UnpackLog(event, "RoleGranted", log); err != nil {
+					return err
+				}
+				event.Raw = log
+
+				select {
+				case sink <- event:
+				case err := <-sub.Err():
+					return err
+				case <-quit:
+					return nil
+				}
+			case err := <-sub.Err():
+				return err
+			case <-quit:
+				return nil
+			}
+		}
+	}), nil
+}
+
+// ParseRoleGranted is a log parse operation binding the contract event 0x2f8788117e7eff1d82e926ec794901d17c78024a50270940304540a733656f0d.
+//
+// Solidity: event RoleGranted(bytes32 indexed role, address indexed account, address indexed sender)
+func (_Currencyreceiver *CurrencyreceiverFilterer) ParseRoleGranted(log types.Log) (*CurrencyreceiverRoleGranted, error) {
+	event := new(CurrencyreceiverRoleGranted)
+	if err := _Currencyreceiver.contract.UnpackLog(event, "RoleGranted", log); err != nil {
+		return nil, err
+	}
+	event.Raw = log
+	return event, nil
+}
+
+// CurrencyreceiverRoleRevokedIterator is returned from FilterRoleRevoked and is used to iterate over the raw logs and unpacked data for RoleRevoked events raised by the Currencyreceiver contract.
+type CurrencyreceiverRoleRevokedIterator struct {
+	Event *CurrencyreceiverRoleRevoked // Event containing the contract specifics and raw log
+
+	contract *bind.BoundContract // Generic contract to use for unpacking event data
+	event    string              // Event name to use for unpacking event data
+
+	logs chan types.Log        // Log channel receiving the found contract events
+	sub  ethereum.Subscription // Subscription for errors, completion and termination
+	done bool                  // Whether the subscription completed delivering logs
+	fail error                 // Occurred error to stop iteration
+}
+
+// Next advances the iterator to the subsequent event, returning whether there
+// are any more events found. In case of a retrieval or parsing error, false is
+// returned and Error() can be queried for the exact failure.
+func (it *CurrencyreceiverRoleRevokedIterator) Next() bool {
+	// If the iterator failed, stop iterating
+	if it.fail != nil {
+		return false
+	}
+	// If the iterator completed, deliver directly whatever's available
+	if it.done {
+		select {
+		case log := <-it.logs:
+			it.Event = new(CurrencyreceiverRoleRevoked)
+			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+				it.fail = err
+				return false
+			}
+			it.Event.Raw = log
+			return true
+
+		default:
+			return false
+		}
+	}
+	// Iterator still in progress, wait for either a data or an error event
+	select {
+	case log := <-it.logs:
+		it.Event = new(CurrencyreceiverRoleRevoked)
+		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+			it.fail = err
+			return false
+		}
+		it.Event.Raw = log
+		return true
+
+	case err := <-it.sub.Err():
+		it.done = true
+		it.fail = err
+		return it.Next()
+	}
+}
+
+// Error returns any retrieval or parsing error occurred during filtering.
+func (it *CurrencyreceiverRoleRevokedIterator) Error() error {
+	return it.fail
+}
+
+// Close terminates the iteration process, releasing any pending underlying
+// resources.
+func (it *CurrencyreceiverRoleRevokedIterator) Close() error {
+	it.sub.Unsubscribe()
+	return nil
+}
+
+// CurrencyreceiverRoleRevoked represents a RoleRevoked event raised by the Currencyreceiver contract.
+type CurrencyreceiverRoleRevoked struct {
+	Role    [32]byte
+	Account common.Address
+	Sender  common.Address
+	Raw     types.Log // Blockchain specific contextual infos
+}
+
+// FilterRoleRevoked is a free log retrieval operation binding the contract event 0xf6391f5c32d9c69d2a47ea670b442974b53935d1edc7fd64eb21e047a839171b.
+//
+// Solidity: event RoleRevoked(bytes32 indexed role, address indexed account, address indexed sender)
+func (_Currencyreceiver *CurrencyreceiverFilterer) FilterRoleRevoked(opts *bind.FilterOpts, role [][32]byte, account []common.Address, sender []common.Address) (*CurrencyreceiverRoleRevokedIterator, error) {
+
+	var roleRule []interface{}
+	for _, roleItem := range role {
+		roleRule = append(roleRule, roleItem)
+	}
+	var accountRule []interface{}
+	for _, accountItem := range account {
+		accountRule = append(accountRule, accountItem)
+	}
+	var senderRule []interface{}
+	for _, senderItem := range sender {
+		senderRule = append(senderRule, senderItem)
+	}
+
+	logs, sub, err := _Currencyreceiver.contract.FilterLogs(opts, "RoleRevoked", roleRule, accountRule, senderRule)
+	if err != nil {
+		return nil, err
+	}
+	return &CurrencyreceiverRoleRevokedIterator{contract: _Currencyreceiver.contract, event: "RoleRevoked", logs: logs, sub: sub}, nil
+}
+
+// WatchRoleRevoked is a free log subscription operation binding the contract event 0xf6391f5c32d9c69d2a47ea670b442974b53935d1edc7fd64eb21e047a839171b.
+//
+// Solidity: event RoleRevoked(bytes32 indexed role, address indexed account, address indexed sender)
+func (_Currencyreceiver *CurrencyreceiverFilterer) WatchRoleRevoked(opts *bind.WatchOpts, sink chan<- *CurrencyreceiverRoleRevoked, role [][32]byte, account []common.Address, sender []common.Address) (event.Subscription, error) {
+
+	var roleRule []interface{}
+	for _, roleItem := range role {
+		roleRule = append(roleRule, roleItem)
+	}
+	var accountRule []interface{}
+	for _, accountItem := range account {
+		accountRule = append(accountRule, accountItem)
+	}
+	var senderRule []interface{}
+	for _, senderItem := range sender {
+		senderRule = append(senderRule, senderItem)
+	}
+
+	logs, sub, err := _Currencyreceiver.contract.WatchLogs(opts, "RoleRevoked", roleRule, accountRule, senderRule)
+	if err != nil {
+		return nil, err
+	}
+	return event.NewSubscription(func(quit <-chan struct{}) error {
+		defer sub.Unsubscribe()
+		for {
+			select {
+			case log := <-logs:
+				// New log arrived, parse the event and forward to the user
+				event := new(CurrencyreceiverRoleRevoked)
+				if err := _Currencyreceiver.contract.UnpackLog(event, "RoleRevoked", log); err != nil {
+					return err
+				}
+				event.Raw = log
+
+				select {
+				case sink <- event:
+				case err := <-sub.Err():
+					return err
+				case <-quit:
+					return nil
+				}
+			case err := <-sub.Err():
+				return err
+			case <-quit:
+				return nil
+			}
+		}
+	}), nil
+}
+
+// ParseRoleRevoked is a log parse operation binding the contract event 0xf6391f5c32d9c69d2a47ea670b442974b53935d1edc7fd64eb21e047a839171b.
+//
+// Solidity: event RoleRevoked(bytes32 indexed role, address indexed account, address indexed sender)
+func (_Currencyreceiver *CurrencyreceiverFilterer) ParseRoleRevoked(log types.Log) (*CurrencyreceiverRoleRevoked, error) {
+	event := new(CurrencyreceiverRoleRevoked)
+	if err := _Currencyreceiver.contract.UnpackLog(event, "RoleRevoked", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log
@@ -880,17 +1389,17 @@ func (it *CurrencyreceiverWithdrawIterator) Close() error {
 
 // CurrencyreceiverWithdraw represents a Withdraw event raised by the Currencyreceiver contract.
 type CurrencyreceiverWithdraw struct {
-	Currency []common.Address
-	Amount   []*big.Int
+	Currency common.Address
+	Amount   *big.Int
 	To       common.Address
 	BillId   string
 	Raw      types.Log // Blockchain specific contextual infos
 }
 
-// FilterWithdraw is a free log retrieval operation binding the contract event 0x246131af8b217ee0901b4b5a97b3dc7ebf85c4565198d26948c19055597fc002.
+// FilterWithdraw is a free log retrieval operation binding the contract event 0xa4c6cd4bfefcc09490a00cf1f79a859de6f34c1da3186bb65d5102b1b8445547.
 //
-// Solidity: event Withdraw(address[] indexed currency, uint256[] amount, address indexed to, string billId)
-func (_Currencyreceiver *CurrencyreceiverFilterer) FilterWithdraw(opts *bind.FilterOpts, currency [][]common.Address, to []common.Address) (*CurrencyreceiverWithdrawIterator, error) {
+// Solidity: event Withdraw(address indexed currency, uint256 amount, address indexed to, string billId)
+func (_Currencyreceiver *CurrencyreceiverFilterer) FilterWithdraw(opts *bind.FilterOpts, currency []common.Address, to []common.Address) (*CurrencyreceiverWithdrawIterator, error) {
 
 	var currencyRule []interface{}
 	for _, currencyItem := range currency {
@@ -909,10 +1418,10 @@ func (_Currencyreceiver *CurrencyreceiverFilterer) FilterWithdraw(opts *bind.Fil
 	return &CurrencyreceiverWithdrawIterator{contract: _Currencyreceiver.contract, event: "Withdraw", logs: logs, sub: sub}, nil
 }
 
-// WatchWithdraw is a free log subscription operation binding the contract event 0x246131af8b217ee0901b4b5a97b3dc7ebf85c4565198d26948c19055597fc002.
+// WatchWithdraw is a free log subscription operation binding the contract event 0xa4c6cd4bfefcc09490a00cf1f79a859de6f34c1da3186bb65d5102b1b8445547.
 //
-// Solidity: event Withdraw(address[] indexed currency, uint256[] amount, address indexed to, string billId)
-func (_Currencyreceiver *CurrencyreceiverFilterer) WatchWithdraw(opts *bind.WatchOpts, sink chan<- *CurrencyreceiverWithdraw, currency [][]common.Address, to []common.Address) (event.Subscription, error) {
+// Solidity: event Withdraw(address indexed currency, uint256 amount, address indexed to, string billId)
+func (_Currencyreceiver *CurrencyreceiverFilterer) WatchWithdraw(opts *bind.WatchOpts, sink chan<- *CurrencyreceiverWithdraw, currency []common.Address, to []common.Address) (event.Subscription, error) {
 
 	var currencyRule []interface{}
 	for _, currencyItem := range currency {
@@ -956,9 +1465,9 @@ func (_Currencyreceiver *CurrencyreceiverFilterer) WatchWithdraw(opts *bind.Watc
 	}), nil
 }
 
-// ParseWithdraw is a log parse operation binding the contract event 0x246131af8b217ee0901b4b5a97b3dc7ebf85c4565198d26948c19055597fc002.
+// ParseWithdraw is a log parse operation binding the contract event 0xa4c6cd4bfefcc09490a00cf1f79a859de6f34c1da3186bb65d5102b1b8445547.
 //
-// Solidity: event Withdraw(address[] indexed currency, uint256[] amount, address indexed to, string billId)
+// Solidity: event Withdraw(address indexed currency, uint256 amount, address indexed to, string billId)
 func (_Currencyreceiver *CurrencyreceiverFilterer) ParseWithdraw(log types.Log) (*CurrencyreceiverWithdraw, error) {
 	event := new(CurrencyreceiverWithdraw)
 	if err := _Currencyreceiver.contract.UnpackLog(event, "Withdraw", log); err != nil {

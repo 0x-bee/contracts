@@ -60,23 +60,13 @@ export type ContractContext = Web3ContractContext<
   CurrencyReceiverEvents
 >;
 export type CurrencyReceiverEvents =
-  | 'OwnershipTransferred'
   | 'Pay'
   | 'Refund'
+  | 'RoleAdminChanged'
+  | 'RoleGranted'
+  | 'RoleRevoked'
   | 'Withdraw';
 export interface CurrencyReceiverEventsContext {
-  OwnershipTransferred(
-    parameters: {
-      filter?: {
-        previousOwner?: string | string[];
-        newOwner?: string | string[];
-      };
-      fromBlock?: number;
-      toBlock?: 'latest' | number;
-      topics?: string[];
-    },
-    callback?: (error: Error, event: EventData) => void
-  ): EventResponse;
   Pay(
     parameters: {
       filter?: { currency?: string | string[]; from?: string | string[] };
@@ -88,7 +78,46 @@ export interface CurrencyReceiverEventsContext {
   ): EventResponse;
   Refund(
     parameters: {
-      filter?: { currency?: string[] | string[][]; to?: string[] | string[][] };
+      filter?: { currency?: string | string[]; to?: string | string[] };
+      fromBlock?: number;
+      toBlock?: 'latest' | number;
+      topics?: string[];
+    },
+    callback?: (error: Error, event: EventData) => void
+  ): EventResponse;
+  RoleAdminChanged(
+    parameters: {
+      filter?: {
+        role?: string | number[] | string | number[][];
+        previousAdminRole?: string | number[] | string | number[][];
+        newAdminRole?: string | number[] | string | number[][];
+      };
+      fromBlock?: number;
+      toBlock?: 'latest' | number;
+      topics?: string[];
+    },
+    callback?: (error: Error, event: EventData) => void
+  ): EventResponse;
+  RoleGranted(
+    parameters: {
+      filter?: {
+        role?: string | number[] | string | number[][];
+        account?: string | string[];
+        sender?: string | string[];
+      };
+      fromBlock?: number;
+      toBlock?: 'latest' | number;
+      topics?: string[];
+    },
+    callback?: (error: Error, event: EventData) => void
+  ): EventResponse;
+  RoleRevoked(
+    parameters: {
+      filter?: {
+        role?: string | number[] | string | number[][];
+        account?: string | string[];
+        sender?: string | string[];
+      };
       fromBlock?: number;
       toBlock?: 'latest' | number;
       topics?: string[];
@@ -97,7 +126,7 @@ export interface CurrencyReceiverEventsContext {
   ): EventResponse;
   Withdraw(
     parameters: {
-      filter?: { currency?: string[] | string[][]; to?: string | string[] };
+      filter?: { currency?: string | string[]; to?: string | string[] };
       fromBlock?: number;
       toBlock?: 'latest' | number;
       topics?: string[];
@@ -107,17 +136,19 @@ export interface CurrencyReceiverEventsContext {
 }
 export type CurrencyReceiverMethodNames =
   | 'new'
+  | 'DEFAULT_ADMIN_ROLE'
+  | 'REFUND_ROLE'
+  | 'WITHDRAW_ROLE'
   | 'balanceOf'
-  | 'owner'
+  | 'getRoleAdmin'
+  | 'grantRole'
+  | 'hasRole'
   | 'pay'
   | 'refund'
-  | 'renounceOwnership'
-  | 'transferOwnership'
+  | 'renounceRole'
+  | 'revokeRole'
+  | 'supportsInterface'
   | 'withdraw';
-export interface OwnershipTransferredEventEmittedResponse {
-  previousOwner: string;
-  newOwner: string;
-}
 export interface PayEventEmittedResponse {
   currency: string;
   from: string;
@@ -125,14 +156,29 @@ export interface PayEventEmittedResponse {
   orderId: string;
 }
 export interface RefundEventEmittedResponse {
-  currency: string[];
-  amount: string[];
-  to: string[];
-  orderIds: string[];
+  currency: string;
+  amount: string;
+  to: string;
+  orderId: string;
+}
+export interface RoleAdminChangedEventEmittedResponse {
+  role: string | number[];
+  previousAdminRole: string | number[];
+  newAdminRole: string | number[];
+}
+export interface RoleGrantedEventEmittedResponse {
+  role: string | number[];
+  account: string;
+  sender: string;
+}
+export interface RoleRevokedEventEmittedResponse {
+  role: string | number[];
+  account: string;
+  sender: string;
 }
 export interface WithdrawEventEmittedResponse {
-  currency: string[];
-  amount: string[];
+  currency: string;
+  amount: string;
   to: string;
   billId: string;
 }
@@ -149,6 +195,27 @@ export interface CurrencyReceiver {
    * Constant: true
    * StateMutability: view
    * Type: function
+   */
+  DEFAULT_ADMIN_ROLE(): MethodConstantReturnContext<string>;
+  /**
+   * Payable: false
+   * Constant: true
+   * StateMutability: view
+   * Type: function
+   */
+  REFUND_ROLE(): MethodConstantReturnContext<string>;
+  /**
+   * Payable: false
+   * Constant: true
+   * StateMutability: view
+   * Type: function
+   */
+  WITHDRAW_ROLE(): MethodConstantReturnContext<string>;
+  /**
+   * Payable: false
+   * Constant: true
+   * StateMutability: view
+   * Type: function
    * @param currency Type: address, Indexed: false
    */
   balanceOf(currency: string): MethodConstantReturnContext<string>;
@@ -157,8 +224,30 @@ export interface CurrencyReceiver {
    * Constant: true
    * StateMutability: view
    * Type: function
+   * @param role Type: bytes32, Indexed: false
    */
-  owner(): MethodConstantReturnContext<string>;
+  getRoleAdmin(role: string | number[]): MethodConstantReturnContext<string>;
+  /**
+   * Payable: false
+   * Constant: false
+   * StateMutability: nonpayable
+   * Type: function
+   * @param role Type: bytes32, Indexed: false
+   * @param account Type: address, Indexed: false
+   */
+  grantRole(role: string | number[], account: string): MethodReturnContext;
+  /**
+   * Payable: false
+   * Constant: true
+   * StateMutability: view
+   * Type: function
+   * @param role Type: bytes32, Indexed: false
+   * @param account Type: address, Indexed: false
+   */
+  hasRole(
+    role: string | number[],
+    account: string
+  ): MethodConstantReturnContext<boolean>;
   /**
    * Payable: false
    * Constant: false
@@ -190,16 +279,29 @@ export interface CurrencyReceiver {
    * Constant: false
    * StateMutability: nonpayable
    * Type: function
+   * @param role Type: bytes32, Indexed: false
+   * @param account Type: address, Indexed: false
    */
-  renounceOwnership(): MethodReturnContext;
+  renounceRole(role: string | number[], account: string): MethodReturnContext;
   /**
    * Payable: false
    * Constant: false
    * StateMutability: nonpayable
    * Type: function
-   * @param newOwner Type: address, Indexed: false
+   * @param role Type: bytes32, Indexed: false
+   * @param account Type: address, Indexed: false
    */
-  transferOwnership(newOwner: string): MethodReturnContext;
+  revokeRole(role: string | number[], account: string): MethodReturnContext;
+  /**
+   * Payable: false
+   * Constant: true
+   * StateMutability: view
+   * Type: function
+   * @param interfaceId Type: bytes4, Indexed: false
+   */
+  supportsInterface(
+    interfaceId: string | number[]
+  ): MethodConstantReturnContext<boolean>;
   /**
    * Payable: false
    * Constant: false
@@ -207,11 +309,13 @@ export interface CurrencyReceiver {
    * Type: function
    * @param currency Type: address[], Indexed: false
    * @param amount Type: uint256[], Indexed: false
-   * @param billId Type: string, Indexed: false
+   * @param to Type: address[], Indexed: false
+   * @param billId Type: string[], Indexed: false
    */
   withdraw(
     currency: string[],
     amount: string[],
-    billId: string
+    to: string[],
+    billId: string[]
   ): MethodReturnContext;
 }
